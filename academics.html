@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Academics | Makindye Junior Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6-72,500;6-72,600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#f8f9fa",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#261900",
+                        "tertiary-fixed": "#ffdea5",
+                        "secondary-container": "#959efd",
+                        "primary-fixed": "#bcedd7",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1d",
+                        "inverse-surface": "#2e3132",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c0c8c3",
+                        "background": "#f8f9fa",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary-fixed": "#e0e0ff",
+                        "on-surface": "#191c1d",
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "surface-container-low": "#f3f4f5",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d9dadb",
+                        "on-secondary-fixed": "#000767",
+                        "tertiary-container": "#473200",
+                        "primary-fixed-dim": "#a0d1bc",
+                        "on-primary-container": "#79a894",
+                        "tertiary": "#2d1e00",
+                        "on-secondary-fixed-variant": "#343d96",
+                        "surface-tint": "#396756",
+                        "surface-variant": "#e1e3e4",
+                        "tertiary-fixed-dim": "#e9c176",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#002116",
+                        "outline": "#717974",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container": "#edeeef",
+                        "on-surface-variant": "#414944",
+                        "secondary-fixed-dim": "#bdc2ff",
+                        "secondary": "#4c56af",
+                        "primary": "#00261b",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#0b3d2e",
+                        "on-secondary-container": "#27308a",
+                        "surface": "#f8f9fa",
+                        "on-primary-fixed-variant": "#214f3f",
+                        "surface-container-high": "#e7e8e9",
+                        "inverse-primary": "#a0d1bc",
+                        "on-tertiary-container": "#bd9953"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-desktop": "40px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "stack-xl": "64px",
+                        "stack-xs": "4px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "display-xl": ["Newsreader"],
+                        "headline-md": ["Newsreader"],
+                        "headline-lg": ["Newsreader"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .heritage-border { border-top: 4px solid #f59e0b; }
+        .academic-navy { color: #00261b; }
+        .forest-green { color: #0b3d2e; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-surface-bright text-on-surface font-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 md:px-12 bg-white dark:bg-slate-900 border-t-4 border-amber-500 border-b border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-emerald-900 dark:text-emerald-400" data-icon="school">school</span>
+<h1 class="text-xl font-bold text-emerald-900 dark:text-emerald-100 uppercase tracking-widest font-serif">Makindye Junior Academy</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 font-serif font-bold text-lg tracking-tight hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors" href="index.html">Home</a>
+<a class="text-slate-600 dark:text-slate-400 font-serif font-bold text-lg tracking-tight hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors" href="about.html">About</a>
+<a class="text-emerald-700 dark:text-emerald-400 border-b-2 border-emerald-700 font-serif font-bold text-lg tracking-tight" href="academics.html">Academics</a>
+<a class="text-slate-600 dark:text-slate-400 font-serif font-bold text-lg tracking-tight hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors" href="gallery.html">Gallery</a>
+<button class="bg-[#0b3d2e] text-white px-6 py-2 rounded-lg font-label-sm hover:translate-y-[-2px] transition-transform cursor-pointer" onclick="window.location.href='registration.html'">Apply Now</button>
+</nav>
+<span class="material-symbols-outlined md:hidden text-emerald-900 cursor-pointer" data-icon="menu" onclick="toggleMobileMenu()">menu</span>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-black/50 z-40 hidden" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<nav class="mobile-menu fixed top-0 left-0 w-80 max-w-full h-full bg-white z-50 p-6 flex flex-col" id="mobileMenu">
+<div class="flex justify-between items-center mb-8">
+<span class="font-bold text-emerald-900 text-lg">Menu</span>
+<button class="material-symbols-outlined text-emerald-900" onclick="toggleMobileMenu()">close</button>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-serif font-bold text-lg text-slate-600 py-2" href="index.html" onclick="toggleMobileMenu()">Home</a>
+<a class="font-serif font-bold text-lg text-slate-600 py-2" href="about.html" onclick="toggleMobileMenu()">About</a>
+<a class="font-serif font-bold text-lg text-emerald-700 border-b-2 border-emerald-700 py-2" href="academics.html" onclick="toggleMobileMenu()">Academics</a>
+<a class="font-serif font-bold text-lg text-slate-600 py-2" href="gallery.html" onclick="toggleMobileMenu()">Gallery</a>
+<a class="font-serif font-bold text-lg text-slate-600 py-2" href="registration.html" onclick="toggleMobileMenu()">Registration</a>
+</div>
+<button class="mt-auto bg-primary text-on-primary px-6 py-3 rounded-lg font-label-sm" onclick="window.location.href='registration.html'; toggleMobileMenu()">APPLY NOW</button>
+</nav>
+
+<main class="pt-24 pb-16">
+<!-- Hero Section -->
+<section class="relative h-[400px] flex items-center justify-center overflow-hidden mb-16">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A wide-angle shot of a prestigious academy hallway with polished wooden floors and large windows letting in soft morning sunlight. The architecture combines traditional brickwork with modern glass accents, creating a professional yet warm academic atmosphere. The color palette is dominated by deep greens and rich wood tones, conveying a sense of heritage and growth." src="first.jpeg"/>
+<div class="absolute inset-0 bg-primary/40"></div>
+</div>
+<div class="relative z-10 text-center px-4">
+<h2 class="font-display-xl text-white mb-4">Academic Programs</h2>
+<p class="text-white/90 text-body-lg max-w-2xl mx-auto font-body-md">Cultivating intellectual curiosity and moral integrity through a rigorous, globally-minded curriculum designed for the leaders of tomorrow.</p>
+</div>
+</section>
+<div class="max-w-[1280px] mx-auto px-10">
+<!-- Academic Levels: Asymmetric Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24 items-center">
+<div class="md:col-span-7">
+<div class="inline-block px-4 py-1 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-label-sm mb-4">Foundation Years</div>
+<h3 class="font-headline-lg text-primary mb-6">Primary Academic Program</h3>
+<p class="text-on-surface-variant text-body-lg mb-8">Our primary curriculum focuses on holistic development, blending the best of international standards with a focus on core literacy, numeracy, and character formation. We believe in nurturing the 'whole child' through inquiry-based learning.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-6 bg-white border-t-4 border-primary shadow-sm rounded-xl cursor-pointer hover:-translate-y-1 transition-transform" onclick="showSubjectDetail('Inquiry', 'Fostering natural curiosity through hands-on exploration and discovery-based activities. Our students learn to ask questions, investigate, and find answers through guided exploration.')">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="lightbulb">lightbulb</span>
+<h4 class="font-headline-md text-primary mb-1">Inquiry</h4>
+<p class="text-label-sm text-outline">Fostering natural curiosity.</p>
+</div>
+<div class="p-6 bg-white border-t-4 border-tertiary-fixed-dim shadow-sm rounded-xl cursor-pointer hover:-translate-y-1 transition-transform" onclick="showSubjectDetail('Critical Thinking', 'Developing analytical skills through problem-solving, logical reasoning, and evidence-based decision making. Students learn to think deeply and systematically.')">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="psychology">psychology</span>
+<h4 class="font-headline-md text-primary mb-1">Critical Thinking</h4>
+<p class="text-label-sm text-outline">Analytical skills development.</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 aspect-[4/5] relative">
+<img class="w-full h-full object-cover rounded-xl shadow-lg cursor-pointer" data-alt="A candid, close-up photograph of a young primary student focused on a science experiment in a bright, modern classroom. The lighting is soft and natural, highlighting the student's expression of wonder and concentration. The background shows blurred educational posters and organized learning materials in soft cream and green tones, emphasizing a nurturing academic environment." src="second.jpeg"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24 items-center">
+<div class="md:col-span-5 order-2 md:order-1 aspect-[4/5]">
+<img class="w-full h-full object-cover rounded-xl shadow-lg cursor-pointer" data-alt="A group of secondary students engaged in a collaborative seminar-style discussion around a wooden conference table in a library setting. Warm, directional lighting creates a professional and serious atmosphere. The color palette features deep blues and greens, with shelves of books in the background providing a sense of intellectual depth and prestige." src="third.jpeg"/>
+</div>
+<div class="md:col-span-7 order-1 md:order-2">
+<div class="inline-block px-4 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-label-sm mb-4">University Readiness</div>
+<h3 class="font-headline-lg text-primary mb-6">Secondary &amp; Advanced Placement</h3>
+<p class="text-on-surface-variant text-body-lg mb-8">Preparing students for the world's most prestigious universities through a rigorous selection of honors and AP courses. Our secondary program emphasizes independent research, public speaking, and ethical leadership.</p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3 cursor-pointer" onclick="showSubjectDetail('Global Perspectives', 'Integrating international relations and social ethics. Students explore global issues, cultural understanding, and develop cross-cultural communication skills.')">
+<span class="material-symbols-outlined text-amber-500" data-icon="verified">verified</span>
+<div>
+<strong class="text-primary font-bold block">Global Perspectives</strong>
+<span class="text-body-md text-on-surface-variant">Integrating international relations and social ethics.</span>
+</div>
+</li>
+<li class="flex items-start gap-3 cursor-pointer" onclick="showSubjectDetail('STEM Excellence', 'Advanced laboratory work and computational mathematics. Our STEM program includes robotics, coding, engineering fundamentals, and research methodology.')">
+<span class="material-symbols-outlined text-amber-500" data-icon="verified">verified</span>
+<div>
+<strong class="text-primary font-bold block">STEM Excellence</strong>
+<span class="text-body-md text-on-surface-variant">Advanced laboratory work and computational mathematics.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- Subject Bento Grid -->
+<section class="mb-24">
+<div class="text-center mb-12">
+<h3 class="font-headline-lg text-primary mb-2">Academic Disciplines</h3>
+<p class="text-outline">A comprehensive suite of subjects taught by faculty experts.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-[600px]">
+<div class="md:col-span-2 md:row-span-2 bg-primary p-8 rounded-xl flex flex-col justify-end relative overflow-hidden group cursor-pointer" onclick="showSubjectDetail('Sciences & Technology', 'Physics, Chemistry, Biology, and Computer Science. Our state-of-the-art laboratories and experienced faculty ensure hands-on learning experiences that prepare students for careers in STEM fields.')">
+<img class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-500" data-alt="A clean, minimalist laboratory setup with glass flasks and a microscope under cool, bright surgical lighting. The aesthetic is professional and clinical, highlighting scientific exploration." src="fourth.jpeg"/>
+<div class="relative z-10">
+<h4 class="text-white font-headline-lg mb-2">Sciences &amp; Technology</h4>
+<p class="text-primary-fixed text-body-md">Physics, Chemistry, Biology, and Computer Science.</p>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between cursor-pointer hover:-translate-y-1 transition-transform" onclick="showSubjectDetail('Humanities', 'Literature, History, Philosophy. Our humanities program develops critical thinking, cultural awareness, and communication skills through the study of literature, world history, and philosophical inquiry.')">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="menu_book">menu_book</span>
+<div>
+<h4 class="text-primary font-bold mb-1">Humanities</h4>
+<p class="text-label-sm text-outline">Literature, History, Philosophy.</p>
+</div>
+</div>
+<div class="bg-surface-container p-6 rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between cursor-pointer hover:-translate-y-1 transition-transform" onclick="showSubjectDetail('Mathematics', 'Calculus, Statistics, Algebra. From foundational algebra to advanced calculus, our mathematics program builds strong analytical and problem-solving skills essential for higher education.')">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="functions">functions</span>
+<div>
+<h4 class="text-primary font-bold mb-1">Mathematics</h4>
+<p class="text-label-sm text-outline">Calculus, Statistics, Algebra.</p>
+</div>
+</div>
+<div class="bg-tertiary-fixed text-on-tertiary-fixed-variant p-6 rounded-xl shadow-sm flex flex-col justify-between cursor-pointer hover:-translate-y-1 transition-transform" onclick="showSubjectDetail('Fine Arts', 'Music, Visual Arts, Drama. Our arts program nurtures creativity, self-expression, and cultural appreciation through comprehensive programs in music, visual arts, and theatrical arts.')">
+<span class="material-symbols-outlined text-3xl" data-icon="palette">palette</span>
+<div>
+<h4 class="font-bold mb-1">Fine Arts</h4>
+<p class="text-label-sm opacity-80">Music, Visual Arts, Drama.</p>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between cursor-pointer hover:-translate-y-1 transition-transform" onclick="showSubjectDetail('World Languages', 'French, Mandarin, Spanish. Our language program offers immersive learning experiences in French, Mandarin, and Spanish, preparing students for global communication.')">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="translate">translate</span>
+<div>
+<h4 class="text-primary font-bold mb-1">World Languages</h4>
+<p class="text-label-sm text-outline">French, Mandarin, Spanish.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Schedule Table Section -->
+<section class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden mb-24">
+<div class="bg-primary p-6">
+<h3 class="text-white font-headline-md">Sample Weekly Schedule</h3>
+<p class="text-primary-fixed text-label-sm">Standard Secondary Year 10 (Grade 9) Timetable</p>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container text-on-surface font-label-sm uppercase tracking-wider">
+<th class="px-6 py-4 border-b border-outline-variant">Time</th>
+<th class="px-6 py-4 border-b border-outline-variant">Monday</th>
+<th class="px-6 py-4 border-b border-outline-variant">Tuesday</th>
+<th class="px-6 py-4 border-b border-outline-variant">Wednesday</th>
+<th class="px-6 py-4 border-b border-outline-variant">Thursday</th>
+<th class="px-6 py-4 border-b border-outline-variant">Friday</th>
+</tr>
+</thead>
+<tbody class="text-on-surface-variant font-body-md">
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="px-6 py-4 border-b border-outline-variant font-bold">08:00 - 08:30</td>
+<td class="px-6 py-4 border-b border-outline-variant text-center bg-surface-container-low italic" colspan="5">Morning Assembly &amp; Character Development</td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="px-6 py-4 border-b border-outline-variant font-bold">08:30 - 09:45</td>
+<td class="px-6 py-4 border-b border-outline-variant">Advanced Mathematics</td>
+<td class="px-6 py-4 border-b border-outline-variant">World History</td>
+<td class="px-6 py-4 border-b border-outline-variant">Advanced Mathematics</td>
+<td class="px-6 py-4 border-b border-outline-variant">English Literature</td>
+<td class="px-6 py-4 border-b border-outline-variant">Biology Lab</td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="px-6 py-4 border-b border-outline-variant font-bold">10:00 - 11:15</td>
+<td class="px-6 py-4 border-b border-outline-variant">Biology</td>
+<td class="px-6 py-4 border-b border-outline-variant">Physics</td>
+<td class="px-6 py-4 border-b border-outline-variant">Foreign Language</td>
+<td class="px-6 py-4 border-b border-outline-variant">Computer Science</td>
+<td class="px-6 py-4 border-b border-outline-variant">Creative Arts</td>
+</tr>
+<tr class="bg-surface-container-lowest">
+<td class="px-6 py-4 border-b border-outline-variant font-bold">11:15 - 12:15</td>
+<td class="px-6 py-4 border-b border-outline-variant text-center font-serif italic text-primary" colspan="5">Community Lunch &amp; Peer Mentoring</td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="px-6 py-4 border-b border-outline-variant font-bold">12:15 - 13:30</td>
+<td class="px-6 py-4 border-b border-outline-variant">English Literature</td>
+<td class="px-6 py-4 border-b border-outline-variant">Advanced Mathematics</td>
+<td class="px-6 py-4 border-b border-outline-variant">Geography</td>
+<td class="px-6 py-4 border-b border-outline-variant">Physics Lab</td>
+<td class="px-6 py-4 border-b border-outline-variant">Global Studies</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 md:px-24 grid grid-cols-1 md:grid-cols-3 gap-8 bg-white dark:bg-slate-950 w-full border-t border-slate-200 dark:border-slate-800 border-t-4 border-amber-500">
+<div class="space-y-4">
+<h5 class="font-bold text-emerald-900 dark:text-emerald-100 font-serif text-xl">Makindye Junior Academy</h5>
+<p class="font-serif text-sm leading-relaxed text-slate-500 dark:text-slate-400">Nurturing excellence through tradition and innovation. Since 1952.</p>
+</div>
+<div class="flex flex-col gap-2">
+<h6 class="font-bold text-emerald-900 mb-2">Quick Links</h6>
+<a class="text-slate-500 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline underline-offset-4 transition-all duration-200 text-sm cursor-pointer" href="#">Academic Calendar</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline underline-offset-4 transition-all duration-200 text-sm cursor-pointer" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline underline-offset-4 transition-all duration-200 text-sm cursor-pointer" href="registration.html">Admissions</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline underline-offset-4 transition-all duration-200 text-sm cursor-pointer" href="gallery.html">Campus Map</a>
+</div>
+<div class="space-y-4">
+<h6 class="font-bold text-emerald-900 mb-2">Contact Us</h6>
+<p class="text-sm text-slate-500 dark:text-slate-400">1200 Academy Lane, Green Valley<br/>contact@greenwood.edu<br/>+25644715162</p>
+<p class="font-serif text-sm leading-relaxed text-slate-500 dark:text-slate-400 mt-8">© 2024 Makindye Junior Academy. All Rights Reserved.</p>
+</div>
+</footer>
+<!-- FAB -->
+<button class="fixed bottom-8 right-8 bg-[#f59e0b] text-emerald-900 w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform group z-40 cursor-pointer" onclick="window.location.href='registration.html'" title="Register Now">
+<span class="material-symbols-outlined text-3xl" data-icon="app_registration">app_registration</span>
+<span class="absolute right-full mr-4 bg-white px-4 py-2 rounded shadow-md text-emerald-900 font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Register Now</span>
+</button>
+<script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileOverlay');
+            menu.classList.toggle('active');
+            overlay.classList.toggle('hidden');
+        }
+
+        // Show Subject Detail
+        function showSubjectDetail(title, description) {
+            alert(title + '\n\n' + description);
+        }
+    </script>
+</body></html>

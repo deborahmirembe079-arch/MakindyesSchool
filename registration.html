@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact & Registration | Greenwood Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#f8f9fa",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#261900",
+                    "tertiary-fixed": "#ffdea5",
+                    "secondary-container": "#959efd",
+                    "primary-fixed": "#bcedd7",
+                    "on-error": "#ffffff",
+                    "on-background": "#191c1d",
+                    "inverse-surface": "#2e3132",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#c0c8c3",
+                    "background": "#f8f9fa",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e1e3e4",
+                    "secondary-fixed": "#e0e0ff",
+                    "on-surface": "#191c1d",
+                    "on-tertiary-fixed-variant": "#5d4201",
+                    "surface-container-low": "#f3f4f5",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#d9dadb",
+                    "on-secondary-fixed": "#000767",
+                    "tertiary-container": "#473200",
+                    "primary-fixed-dim": "#a0d1bc",
+                    "on-primary-container": "#79a894",
+                    "tertiary": "#2d1e00",
+                    "on-secondary-fixed-variant": "#343d96",
+                    "surface-tint": "#396756",
+                    "surface-variant": "#e1e3e4",
+                    "tertiary-fixed-dim": "#e9c176",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#002116",
+                    "outline": "#717974",
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface-container": "#edeeef",
+                    "on-surface-variant": "#414944",
+                    "secondary-fixed-dim": "#bdc2ff",
+                    "secondary": "#4c56af",
+                    "primary": "#00261b",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#0b3d2e",
+                    "on-secondary-container": "#27308a",
+                    "surface": "#f8f9fa",
+                    "on-primary-fixed-variant": "#214f3f",
+                    "surface-container-high": "#e7e8e9",
+                    "inverse-primary": "#a0d1bc",
+                    "on-tertiary-container": "#bd9953"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-desktop": "40px",
+                    "unit": "8px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "stack-xl": "64px",
+                    "stack-xs": "4px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "body-md": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "display-xl": ["Newsreader"],
+                    "headline-md": ["Newsreader"],
+                    "headline-lg": ["Newsreader"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .form-focus-glow:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(57, 103, 86, 0.2);
+        }
+        .paper-card {
+            background-color: #ffffff;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+            border-top: 4px solid #00261b;
+        }
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        .success-message {
+            animation: slideIn 0.5s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-surface-bright text-on-surface font-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 md:px-12 bg-white dark:bg-slate-900 docked full-width top-0 border-t-4 border-amber-500 border-b border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-emerald-900 dark:text-emerald-400" style="font-size: 24px;">school</span>
+<h1 class="font-serif font-bold text-lg tracking-tight text-emerald-900 dark:text-emerald-400">Greenwood Academy</h1>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-sm text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors uppercase" href="index.html">Home</a>
+<a class="font-label-sm text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors uppercase" href="about.html">About</a>
+<a class="font-label-sm text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors uppercase" href="academics.html">Academics</a>
+<a class="font-label-sm text-emerald-700 dark:text-emerald-400 border-b-2 border-emerald-700 transition-colors uppercase" href="registration.html">Contact/Registration</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-emerald-900 dark:text-emerald-400 cursor-pointer" onclick="toggleMobileMenu()">menu</button>
+</div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-black/50 z-40 hidden" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<nav class="mobile-menu fixed top-0 left-0 w-80 max-w-full h-full bg-white z-50 p-6 flex flex-col" id="mobileMenu">
+<div class="flex justify-between items-center mb-8">
+<span class="font-bold text-emerald-900 text-lg">Menu</span>
+<button class="material-symbols-outlined text-emerald-900" onclick="toggleMobileMenu()">close</button>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-serif font-bold text-lg text-slate-600 py-2" href="index.html" onclick="toggleMobileMenu()">Home</a>
+<a class="font-serif font-bold text-lg text-slate-600 py-2" href="about.html" onclick="toggleMobileMenu()">About</a>
+<a class="font-serif font-bold text-lg text-slate-600 py-2" href="academics.html" onclick="toggleMobileMenu()">Academics</a>
+<a class="font-serif font-bold text-lg text-slate-600 py-2" href="gallery.html" onclick="toggleMobileMenu()">Gallery</a>
+<a class="font-serif font-bold text-lg text-emerald-700 border-b-2 border-emerald-700 py-2" href="registration.html" onclick="toggleMobileMenu()">Registration</a>
+</div>
+<button class="mt-auto bg-primary text-on-primary px-6 py-3 rounded-lg font-label-sm" onclick="toggleMobileMenu()">CLOSE</button>
+</nav>
+
+<main class="pt-32 pb-24 px-4 md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Branding & Contact Info -->
+<div class="lg:col-span-5 space-y-12">
+<div>
+<h2 class="font-display-xl text-display-xl text-primary mb-6">Join Our Academic Legacy</h2>
+<p class="text-body-lg text-on-surface-variant max-w-md">
+                        Begin your journey at Makindye Secondary School. Whether you have inquiries about our curriculum or are ready to register, our admissions office is here to guide you.
+                    </p>
+</div>
+<div class="space-y-8">
+<div class="flex items-start gap-4 cursor-pointer" onclick="makeCall()">
+<div class="bg-primary-fixed p-3 rounded-xl text-on-primary-fixed-variant">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<p class="font-label-sm text-on-surface-variant uppercase tracking-widest mb-1">General Inquiries</p>
+<p class="font-headline-md text-primary">+25644715162</p>
+</div>
+</div>
+<div class="flex items-start gap-4 cursor-pointer" onclick="sendEmail()">
+<div class="bg-primary-fixed p-3 rounded-xl text-on-primary-fixed-variant">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="font-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Admissions Office</p>
+<p class="font-headline-md text-primary">admissions@mak.edu</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-primary-fixed p-3 rounded-xl text-on-primary-fixed-variant">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="font-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Campus Location</p>
+<p class="font-headline-md text-primary">Entebbe Uganda, WA</p>
+</div>
+</div>
+</div>
+<!-- Map Placeholder -->
+<div class="relative w-full h-64 bg-surface-container rounded-xl overflow-hidden border border-outline-variant cursor-pointer" onclick="alert('Greenwood Academy\n4200 Academic Blvd, Forest Hills, WA\n\nCampus Hours:\nMon-Fri: 8:00 AM - 5:00 PM\nSat: 9:00 AM - 12:00 PM')">
+<img class="w-full h-full object-cover grayscale opacity-60" data-alt="A sophisticated, high-contrast overhead map of a lush, green academic campus. The campus features classical brick architecture nestled among dense, manicured forest areas with clear, white-lined pathways. The lighting is crisp afternoon sun, highlighting the textures of the stone buildings and the deep emerald greens of the trees. The overall aesthetic is professional, architectural, and serene, fitting a prestigious academy." data-location="Forest Hills, Washington" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDESrt3aBhKFUVuu5Vfandnr9IwnhmNuaooE5cCRgH3mH5uiNHltqZ6LPpEZFt4WC-XiTDairIaWsQHgPoHn8MZbhAARu3ZKc2SoE9rZPH7eMnUNJHiPgLhM8_RAdz_Ty9b7LNPQiF1mULEARgUCuauBckWDwn0A3CohZThUhKt57JtNkCLIF6X6nOpmp22Pb4ipBPkeamRl921qQrjL6s3o7F-bgMiCUu9VWWmIP9jAHfBm-z2YNaG15v5O8HmDbjKuQyczItvYgM"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bg-white p-4 shadow-xl rounded-full border-2 border-emerald-900">
+<span class="material-symbols-outlined text-emerald-900" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Registration Form -->
+<div class="lg:col-span-7">
+<section class="paper-card p-8 md:p-12 rounded-xl">
+<div class="mb-10">
+<h3 class="font-headline-lg text-primary mb-2">Registration Form</h3>
+<p class="text-on-surface-variant">Please fill out the details below to initiate the registration process.</p>
+</div>
+<form class="space-y-6" id="registrationForm" onsubmit="submitRegistration(event)">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-sm text-primary block">Student Name *</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg font-body-md text-on-surface focus:border-primary-container form-focus-glow transition-all bg-white" placeholder="First & Last Name" type="text" id="studentName" required/>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-primary block">Parent/Guardian Email *</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg font-body-md text-on-surface focus:border-primary-container form-focus-glow transition-all bg-white" placeholder="example@email.com" type="email" id="parentEmail" required/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-sm text-primary block">Phone Number</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg font-body-md text-on-surface focus:border-primary-container form-focus-glow transition-all bg-white" placeholder="+1 (555) 123-4567" type="tel" id="phoneNumber"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-primary block">Date of Birth</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg font-body-md text-on-surface focus:border-primary-container form-focus-glow transition-all bg-white" type="date" id="dob"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-3">
+<label class="font-label-sm text-primary block">Gender</label>
+<div class="flex gap-6 pt-1">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="w-5 h-5 text-primary border-outline-variant focus:ring-primary-container" name="gender" type="radio" value="Male"/>
+<span class="font-body-md text-on-surface-variant">Male</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="w-5 h-5 text-primary border-outline-variant focus:ring-primary-container" name="gender" type="radio" value="Female"/>
+<span class="font-body-md text-on-surface-variant">Female</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="w-5 h-5 text-primary border-outline-variant focus:ring-primary-container" name="gender" type="radio" value="Other"/>
+<span class="font-body-md text-on-surface-variant">Other</span>
+</label>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-primary block">Class Applying For *</label>
+<select class="w-full px-4 py-3 border border-outline-variant rounded-lg font-body-md text-on-surface focus:border-primary-container form-focus-glow transition-all bg-white appearance-none" id="gradeLevel" required>
+<option disabled="" selected="" value="">Select Grade Level</option>
+<option>Senior one</option>
+<option>Senior two</option>
+<option>Senior three</option>
+<option>Senior five</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-primary block">Message or Special Requirements</label>
+<textarea class="w-full px-4 py-3 border border-outline-variant rounded-lg font-body-md text-on-surface focus:border-primary-container form-focus-glow transition-all bg-white" placeholder="Any additional information we should know..." rows="4" id="message"></textarea>
+</div>
+<div class="pt-4">
+<button class="w-full md:w-auto px-10 py-4 bg-primary text-white font-label-sm uppercase tracking-widest rounded-lg hover:bg-on-primary-fixed-variant hover:-translate-y-0.5 transition-all shadow-lg active:scale-[0.98] cursor-pointer" type="submit">
+                                Submit Registration
+                            </button>
+</div>
+<!-- Feedback Message Placeholder -->
+<div class="hidden mt-4 p-4 rounded-lg bg-primary-fixed text-on-primary-fixed border border-on-primary-container flex items-center gap-3 success-message" id="successMessage">
+<span class="material-symbols-outlined">check_circle</span>
+<span class="font-body-md">Registration submitted successfully. Our team will contact you within 48 hours.</span>
+</div>
+</form>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 md:px-24 grid grid-cols-1 md:grid-cols-3 gap-8 bg-white dark:bg-slate-950 w-full border-t border-slate-200 dark:border-slate-800 border-t-4 border-amber-500 flat no shadows">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-900" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-bold text-emerald-900 dark:text-emerald-100 font-serif text-lg">Makindye Secondary School</span>
+</div>
+<p class="font-serif text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+                Cultivating excellence through tradition and innovation since 1954. Join our community of scholars and leaders.
+            </p>
+</div>
+<div class="flex flex-col gap-3">
+<p class="font-label-sm text-emerald-900 uppercase tracking-widest mb-2">Quick Links</p>
+<a class="font-serif text-sm text-slate-500 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline underline-offset-4 transition-all cursor-pointer" href="#">Academic Calendar</a>
+<a class="font-serif text-sm text-slate-500 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline underline-offset-4 transition-all cursor-pointer" href="#">Privacy Policy</a>
+<a class="font-serif text-sm text-slate-500 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline underline-offset-4 transition-all cursor-pointer" href="academics.html">Admissions</a>
+<a class="font-serif text-sm text-slate-500 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline underline-offset-4 transition-all cursor-pointer" href="gallery.html">Campus Map</a>
+</div>
+<div class="flex flex-col justify-between">
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-primary-fixed transition-colors cursor-pointer" onclick="alert('Share on Social Media')">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-primary-fixed transition-colors cursor-pointer" onclick="alert('Connect with us on LinkedIn')">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</button>
+</div>
+<p class="font-serif text-sm text-slate-500 dark:text-slate-400 mt-8">
+                © 2026 Makindye Secondary School. All Rights Reserved.
+            </p>
+</div>
+</footer>
+<script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileOverlay');
+            menu.classList.toggle('active');
+            overlay.classList.toggle('hidden');
+        }
+
+        // Make Phone Call
+        function makeCall() {
+            window.location.href = 'tel:+25644871516';
+        }
+
+        // Send Email
+        function sendEmail() {
+            window.location.href = 'mailto:admissions@greenwood.edu';
+        }
+
+        // Submit Registration
+        function submitRegistration(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const studentName = document.getElementById('studentName').value;
+            const parentEmail = document.getElementById('parentEmail').value;
+            const gradeLevel = document.getElementById('gradeLevel').value;
+            const phone = document.getElementById('phoneNumber').value;
+            const message = document.getElementById('message').value;
+            
+            // Get selected gender
+            const genderRadio = document.querySelector('input[name="gender"]:checked');
+            const gender = genderRadio ? genderRadio.value : 'Not specified';
+            
+            // Validate
+            if (!studentName || !parentEmail || !gradeLevel) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.remove('hidden');
+            
+            // Log the submission (in real app, this would send to server)
+            console.log('Registration submitted:', {
+                studentName: studentName,
+                parentEmail: parentEmail,
+                phone: phone,
+                gender: gender,
+                gradeLevel: gradeLevel,
+                message: message
+            });
+            
+            // Show confirmation
+            alert('Thank you for registering at Makindye secondary school!\n\n' +
+                  'Student: ' + studentName + '\n' +
+                  'Grade: ' + gradeLevel + '\n' +
+                  'We will contact you at ' + parentEmail + ' within 48 hours.');
+            
+            // Reset form
+            document.getElementById('registrationForm').reset();
+            
+            // Hide success message after 10 seconds
+            setTimeout(() => {
+                successMessage.classList.add('hidden');
+            }, 10000);
+        }
+    </script>
+</body></html>

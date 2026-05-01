@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Makindye Secondary School</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#f8f9fa",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed": "#261900",
+                      "tertiary-fixed": "#ffdea5",
+                      "secondary-container": "#959efd",
+                      "primary-fixed": "#bcedd7",
+                      "on-error": "#ffffff",
+                      "on-background": "#191c1d",
+                      "inverse-surface": "#2e3132",
+                      "error-container": "#ffdad6",
+                      "on-secondary": "#ffffff",
+                      "outline-variant": "#c0c8c3",
+                      "background": "#f8f9fa",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-highest": "#e1e3e4",
+                      "secondary-fixed": "#e0e0ff",
+                      "on-surface": "#191c1d",
+                      "on-tertiary-fixed-variant": "#5d4201",
+                      "surface-container-low": "#f3f4f5",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#d9dadb",
+                      "on-secondary-fixed": "#000767",
+                      "tertiary-container": "#473200",
+                      "primary-fixed-dim": "#a0d1bc",
+                      "on-primary-container": "#79a894",
+                      "tertiary": "#2d1e00",
+                      "on-secondary-fixed-variant": "#343d96",
+                      "surface-tint": "#396756",
+                      "surface-variant": "#e1e3e4",
+                      "tertiary-fixed-dim": "#e9c176",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed": "#002116",
+                      "outline": "#717974",
+                      "inverse-on-surface": "#f0f1f2",
+                      "surface-container": "#edeeef",
+                      "on-surface-variant": "#414944",
+                      "secondary-fixed-dim": "#bdc2ff",
+                      "secondary": "#4c56af",
+                      "primary": "#00261b",
+                      "on-tertiary": "#ffffff",
+                      "primary-container": "#0b3d2e",
+                      "on-secondary-container": "#27308a",
+                      "surface": "#f8f9fa",
+                      "on-primary-fixed-variant": "#214f3f",
+                      "surface-container-high": "#e7e8e9",
+                      "inverse-primary": "#a0d1bc",
+                      "on-tertiary-container": "#bd9953"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "margin-desktop": "40px",
+                      "unit": "8px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "stack-xl": "64px",
+                      "stack-xs": "4px",
+                      "stack-md": "16px"
+              },
+              "fontFamily": {
+                      "body-md": ["Manrope"],
+                      "body-lg": ["Manrope"],
+                      "label-sm": ["Manrope"],
+                      "display-xl": ["Newsreader"],
+                      "headline-md": ["Newsreader"],
+                      "headline-lg": ["Newsreader"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .academic-gradient {
+            background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+        }
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+      </style>
+</head>
+<body class="bg-surface-bright text-on-surface font-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 md:px-12 bg-white dark:bg-slate-900 border-t-4 border-amber-500 border-b border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-emerald-900 dark:text-emerald-400" style="font-size: 28px;">school</span>
+<h1 class="font-serif font-bold text-lg tracking-tight text-emerald-900 dark:text-emerald-400">Makindye Secondary School</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-sm text-slate-600 hover:text-emerald-600 transition-colors" href="index.html">Home</a>
+<a class="font-label-sm text-emerald-700 border-b-2 border-emerald-700 transition-colors" href="about.html">About</a>
+<a class="font-label-sm text-slate-600 hover:text-emerald-600 transition-colors" href="academics.html">Academics</a>
+<a class="font-label-sm text-slate-600 hover:text-emerald-600 transition-colors" href="gallery.html">Gallery</a>
+<a class="font-label-sm text-slate-600 hover:text-emerald-600 transition-colors" href="registration.html">Contact/Registration</a>
+</nav>
+<button class="md:hidden" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined text-emerald-900">menu</span>
+</button>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-black/50 z-40 hidden" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<nav class="mobile-menu fixed top-0 left-0 w-80 max-w-full h-full bg-white z-50 p-6 flex flex-col" id="mobileMenu">
+<div class="flex justify-between items-center mb-8">
+<span class="font-bold text-emerald-900 text-lg">Menu</span>
+<button class="material-symbols-outlined text-emerald-900" onclick="toggleMobileMenu()">close</button>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-serif font-bold text-lg text-slate-600 py-2" href="index.html" onclick="toggleMobileMenu()">Home</a>
+<a class="font-serif font-bold text-lg text-emerald-700 border-b-2 border-emerald-700 py-2" href="about.html" onclick="toggleMobileMenu()">About</a>
+<a class="font-serif font-bold text-lg text-slate-600 py-2" href="academics.html" onclick="toggleMobileMenu()">Academics</a>
+<a class="font-serif font-bold text-lg text-slate-600 py-2" href="gallery.html" onclick="toggleMobileMenu()">Gallery</a>
+<a class="font-serif font-bold text-lg text-slate-600 py-2" href="registration.html" onclick="toggleMobileMenu()">Registration</a>
+</div>
+<button class="mt-auto bg-primary text-on-primary px-6 py-3 rounded-lg font-label-sm" onclick="window.location.href='registration.html'; toggleMobileMenu()">APPLY NOW</button>
+</nav>
+
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative h-[530px] flex items-center justify-center overflow-hidden">
+<img alt="Makindye Secondary School Campus" class="absolute inset-0 w-full h-full object-cover grayscale-[0.2]" data-alt="A wide-angle exterior view of a historic brick academy building with large arched windows and ivy-covered walls. The scene is bathed in the warm, golden light of a late afternoon sun, casting soft shadows across a perfectly manicured emerald green lawn. The atmosphere is quiet and prestigious, reflecting a traditional Ivy League aesthetic with a modern, high-contrast clarity." src="download (10).jfif"/>
+<div class="absolute inset-0 bg-primary/40"></div>
+<div class="relative z-10 text-center px-4 max-w-4xl">
+<span class="font-label-sm text-white uppercase tracking-[0.2em] mb-4 block">Legacy of Excellence</span>
+<h2 class="font-display-xl text-white mb-6">Cultivating Minds, <br/> Inspiring Futures</h2>
+<div class="h-1 w-24 bg-amber-500 mx-auto"></div>
+</div>
+</section>
+<!-- School History Section -->
+<section class="py-stack-xl px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="space-y-stack-md">
+<h3 class="font-headline-lg text-primary">A Tradition of Growth</h3>
+<p class="font-body-lg text-on-surface-variant italic">Founded in 1924, Makindye Secondary School began as a visionary endeavor to provide holistic education in an environment that honors both character and intellect.</p>
+<p class="font-body-md text-on-surface-variant">Over the past century, we have evolved from a small local boarding house into a premiere international preparatory institution. Our history is etched in the success stories of our alumni—leaders in science, the arts, and public service. We have consistently expanded our campus while preserving the heritage of our original stone library, ensuring every student feels the weight of the legacy they are now a part of.</p>
+<div class="pt-4">
+<button class="px-8 py-3 bg-primary text-white font-label-sm hover:-translate-y-0.5 transition-transform cursor-pointer" onclick="alert('Opening Academic Archive...')">Explore Archive</button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -top-4 -left-4 w-full h-full border-2 border-amber-500/30 z-0"></div>
+<img alt="School Archives" class="relative z-10 w-full h-[500px] object-cover shadow-2xl cursor-pointer" data-alt="A detailed close-up of vintage leather-bound books and an antique brass microscope resting on a dark mahogany desk in a traditional library. The lighting is low and atmospheric, emphasizing rich textures of paper and wood. The color palette is composed of deep navies, warm golds, and forest greens, creating a sense of intellectual depth and historical significance." src="download (7).jfif"/>
+</div>
+</div>
+</section>
+<!-- Mission and Vision - Bento Style -->
+<section class="bg-surface-container-low py-stack-xl">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Vision Card -->
+<div class="md:col-span-2 bg-white p-12 relative overflow-hidden group shadow-sm border-t-4 border-amber-500">
+<span class="material-symbols-outlined text-amber-500 text-5xl mb-6">visibility</span>
+<h4 class="font-headline-lg text-primary mb-4">Our Vision</h4>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">To be a global beacon of educational innovation, where tradition meets technology, preparing students to navigate and lead in an increasingly complex world with compassion and integrity.</p>
+<div class="absolute right-0 bottom-0 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px]">public</span>
+</div>
+</div>
+<!-- Values Card -->
+<div class="bg-primary p-12 text-white flex flex-col justify-center">
+<h4 class="font-label-sm uppercase tracking-widest text-amber-500 mb-6">Core Values</h4>
+<ul class="space-y-4 font-headline-md">
+<li class="flex items-center gap-3 cursor-pointer" onclick="showValueDetail('Integrity')"><span class="w-2 h-2 bg-amber-500 rounded-full"></span> Integrity</li>
+<li class="flex items-center gap-3 cursor-pointer" onclick="showValueDetail('Resilience')"><span class="w-2 h-2 bg-amber-500 rounded-full"></span> Resilience</li>
+<li class="flex items-center gap-3 cursor-pointer" onclick="showValueDetail('Curiosity')"><span class="w-2 h-2 bg-amber-500 rounded-full"></span> Curiosity</li>
+<li class="flex items-center gap-3 cursor-pointer" onclick="showValueDetail('Community')"><span class="w-2 h-2 bg-amber-500 rounded-full"></span> Community</li>
+</ul>
+</div>
+<!-- Mission Card -->
+<div class="md:col-span-3 bg-white p-12 shadow-sm border-t-4 border-emerald-900 grid md:grid-cols-2 gap-8 items-center">
+<div>
+<span class="material-symbols-outlined text-emerald-900 text-5xl mb-6">flag</span>
+<h4 class="font-headline-lg text-primary mb-4">Our Mission</h4>
+<p class="font-body-md text-on-surface-variant">Makindye Secondary School empowers students to achieve academic excellence and personal growth through a rigorous, inclusive curriculum. We foster an environment of intellectual risk-taking and social responsibility, ensuring our graduates are not just ready for university, but ready for life.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container h-32 rounded flex items-center justify-center flex-col text-center p-4 cursor-pointer hover:bg-primary-fixed transition-colors" onclick="alert('100% College Placement Rate - Our graduates have been accepted to top universities worldwide!')">
+<span class="font-display-xl text-primary">100%</span>
+<span class="font-label-sm text-on-surface-variant">College Placement</span>
+</div>
+<div class="bg-surface-container h-32 rounded flex items-center justify-center flex-col text-center p-4 cursor-pointer hover:bg-primary-fixed transition-colors" onclick="alert('8:1 Student-Teacher Ratio - Ensuring personalized attention for every student.')">
+<span class="font-display-xl text-primary">8:1</span>
+<span class="font-label-sm text-on-surface-variant">Student Ratio</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Administration Section -->
+<section class="py-stack-xl px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h3 class="font-headline-lg text-primary">Educational Leadership</h3>
+<p class="font-body-md text-on-surface-variant mt-2 max-w-xl mx-auto">Guided by a team of dedicated professionals committed to the Makindye legacy.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Admin 1 -->
+<div class="group cursor-pointer" onclick="showAdminInfo('Naluwooza Christine', 'Head of School', 'Leading Makindye Secondary School with vision and dedication for over 15 years.')">
+<div class="relative overflow-hidden aspect-[3/4] mb-4 bg-surface-container-high shadow-lg">
+<img alt="Naluwooza Christine" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" data-alt="A professional portrait of a senior academic male leader in a navy blazer, standing against a softly blurred background of a historic university hallway. The lighting is natural and flattering, with a bright, clean aesthetic. The composition is classic and dignified, evoking trust and authority through a polished, corporate modern photographic style." src="HEAD OF SCHOOL.jpeg"/>
+<div class="absolute top-0 left-0 p-4">
+<div class="bg-amber-500 w-1 h-12"></div>
+</div>
+</div>
+<h5 class="font-headline-md text-primary">Naluwooza Christine</h5>
+<p class="font-label-sm text-on-surface-variant uppercase">Head of School</p>
+</div>
+<!-- Admin 2 -->
+<div class="group cursor-pointer" onclick="showAdminInfo('Ssekasamba Ali', 'Dean of Academics', 'Overseeing academic excellence and curriculum development.')">
+<div class="relative overflow-hidden aspect-[3/4] mb-4 bg-surface-container-high shadow-lg">
+<img alt="Ssekasamba Ali" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" data-alt="A high-end professional headshot of a female academic leader with a confident smile, wearing a structured emerald green dress. The background is a minimalist, modern office space with clean lines and soft white lighting. The image conveys a vibrant and welcoming professional atmosphere with a focus on leadership and academic excellence." src="DEAN.jpeg"/>
+<div class="absolute top-0 left-0 p-4">
+<div class="bg-amber-500 w-1 h-12"></div>
+</div>
+</div>
+<h5 class="font-headline-md text-primary">Ssekasamba Ali</h5>
+<p class="font-label-sm text-on-surface-variant uppercase">Dean of Academics</p>
+</div>
+<!-- Admin 3 -->
+<div class="group cursor-pointer" onclick="showAdminInfo('Waira Geoge', 'Director of Academics', 'Guiding prospective families through the admissions process.')">
+<div class="relative overflow-hidden aspect-[3/4] mb-4 bg-surface-container-high shadow-lg">
+<img alt="Waira Geoge" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" data-alt="A professional male administrator in a light gray suit, standing in a brightly lit, glass-walled atrium. The setting is modern and airy, with greenery visible in the background. The mood is approachable yet professional, reflecting a trustworthy and organized academic environment with high-key lighting and a crisp, clean finish." src="FLF.jpeg"/>
+<div class="absolute top-0 left-0 p-4">
+<div class="bg-amber-500 w-1 h-12"></div>
+</div>
+</div>
+<h5 class="font-headline-md text-primary">Waira Geoge</h5>
+<p class="font-label-sm text-on-surface-variant uppercase">Director of Academics</p>
+</div>
+<!-- Admin 4 -->
+<div class="group cursor-pointer" onclick="showAdminInfo('Nambi Christine', 'Chief Operations Officer', 'Ensuring smooth operations across all campus facilities.')">
+<div class="relative overflow-hidden aspect-[3/4] mb-4 bg-surface-container-high shadow-lg">
+<img alt="Nambi Christine" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" data-alt="A poised female executive in a white silk blouse, positioned against a backdrop of a warm-toned wooden panelled room. Soft ambient light highlights her features, creating a sophisticated and intellectual mood. The image is clean and sharp, using a palette of natural browns, soft whites, and a touch of gold to align with a prestigious academy brand." src="CHIEF .jpeg"/>
+<div class="absolute top-0 left-0 p-4">
+<div class="bg-amber-500 w-1 h-12"></div>
+</div>
+</div>
+<h5 class="font-headline-md text-primary">Nambi Christine</h5>
+<p class="font-label-sm text-on-surface-variant uppercase">Chief Operations Officer</p>
+</div>
+</div>
+</section>
+<!-- Academic Quote Section -->
+<section class="bg-emerald-900 py-24 text-center">
+<div class="max-w-3xl mx-auto px-6">
+<span class="material-symbols-outlined text-amber-500 text-6xl mb-8">format_quote</span>
+<blockquote class="font-display-xl text-white italic mb-8">"Education is not the filling of a pail, but the lighting of a fire."</blockquote>
+<cite class="font-label-sm text-emerald-200 tracking-widest uppercase">— W.B. Yeats</cite>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 md:px-24 grid grid-cols-1 md:grid-cols-3 gap-8 bg-white dark:bg-slate-950 border-t-4 border-amber-500 shadow-none">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-900" style="font-size: 24px;">school</span>
+<span class="font-bold text-emerald-900 dark:text-emerald-100 uppercase tracking-widest">Makindye Secondary School</span>
+</div>
+<p class="font-serif text-sm leading-relaxed text-slate-500 dark:text-slate-400 max-w-xs">Dedicated to academic rigor and character development since 1924. Building the leaders of tomorrow on a foundation of tradition.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h6 class="font-label-sm text-emerald-900 dark:text-emerald-500 uppercase tracking-widest">Quick Links</h6>
+<nav class="flex flex-col gap-2">
+<a class="font-serif text-sm text-slate-500 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline-offset-4 transition-all cursor-pointer" href="academics.html">Academic Calendar</a>
+<a class="font-serif text-sm text-slate-500 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline-offset-4 transition-all cursor-pointer" href="#">Privacy Policy</a>
+<a class="font-serif text-sm text-slate-500 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline-offset-4 transition-all cursor-pointer" href="registration.html">Admissions</a>
+<a class="font-serif text-sm text-slate-500 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline-offset-4 transition-all cursor-pointer" href="gallery.html">Campus Map</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h6 class="font-label-sm text-emerald-900 dark:text-emerald-500 uppercase tracking-widest">Connect</h6>
+<p class="font-serif text-sm text-slate-500 dark:text-slate-400">1200 Academy Lane, <br/> Greenwood Forest</p>
+<p class="font-serif text-sm text-slate-500 dark:text-slate-400 font-semibold">+1 (555) ZGREENWOOD</p>
+<div class="mt-4">
+<p class="font-serif text-xs text-slate-400">© 2024 Makindye Secondary School. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileOverlay');
+            menu.classList.toggle('active');
+            overlay.classList.toggle('hidden');
+        }
+
+        // Show Value Detail
+        function showValueDetail(value) {
+            const details = {
+                'Integrity': 'We uphold the highest ethical standards in everything we do, fostering honest and transparent relationships within our community.',
+                'Resilience': 'We teach our students to face challenges with determination, turning obstacles into opportunities for growth.',
+                'Curiosity': 'We nurture an unending desire to learn, question, and discover—encouraging innovation and creative thinking.',
+                'Community': 'We believe in the power of connection, building a supportive environment where every voice matters.'
+            };
+            alert(value + ': ' + details[value]);
+        }
+
+        // Show Admin Info
+        function showAdminInfo(name, role, bio) {
+            alert(name + '\n' + role + '\n\n' + bio);
+        }
+    </script>
+</body></html>

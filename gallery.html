@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery | Makindye ss</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#f8f9fa",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#261900",
+                    "tertiary-fixed": "#ffdea5",
+                    "secondary-container": "#959efd",
+                    "primary-fixed": "#bcedd7",
+                    "on-error": "#ffffff",
+                    "on-background": "#191c1d",
+                    "inverse-surface": "#2e3132",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#c0c8c3",
+                    "background": "#f8f9fa",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e1e3e4",
+                    "secondary-fixed": "#e0e0ff",
+                    "on-surface": "#191c1d",
+                    "on-tertiary-fixed-variant": "#5d4201",
+                    "surface-container-low": "#f3f4f5",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#d9dadb",
+                    "on-secondary-fixed": "#000767",
+                    "tertiary-container": "#473200",
+                    "primary-fixed-dim": "#a0d1bc",
+                    "on-primary-container": "#79a894",
+                    "tertiary": "#2d1e00",
+                    "on-secondary-fixed-variant": "#343d96",
+                    "surface-tint": "#396756",
+                    "surface-variant": "#e1e3e4",
+                    "tertiary-fixed-dim": "#e9c176",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#002116",
+                    "outline": "#717974",
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface-container": "#edeeef",
+                    "on-surface-variant": "#414944",
+                    "secondary-fixed-dim": "#bdc2ff",
+                    "secondary": "#4c56af",
+                    "primary": "#00261b",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#0b3d2e",
+                    "on-secondary-container": "#27308a",
+                    "surface": "#f8f9fa",
+                    "on-primary-fixed-variant": "#214f3f",
+                    "surface-container-high": "#e7e8e9",
+                    "inverse-primary": "#a0d1bc",
+                    "on-tertiary-container": "#bd9953"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-desktop": "40px",
+                    "unit": "8px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "stack-xl": "64px",
+                    "stack-xs": "4px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "body-md": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "display-xl": ["Newsreader"],
+                    "headline-md": ["Newsreader"],
+                    "headline-lg": ["Newsreader"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .bento-item-large { grid-column: span 8; grid-row: span 2; }
+        .bento-item-tall { grid-column: span 4; grid-row: span 2; }
+        .bento-item-small { grid-column: span 4; }
+        @media (max-width: 768px) {
+            .gallery-grid { display: flex; flex-direction: column; }
+        }
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        .lightbox {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="bg-surface-bright font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 md:px-12 bg-white dark:bg-slate-900 shadow-sm border-t-4 border-amber-500 border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-emerald-900 dark:text-emerald-400" style="font-size: 24px;">school</span>
+<h1 class="font-serif font-bold text-lg tracking-tight text-emerald-900 dark:text-emerald-400">Makindye ss</h1>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors font-label-sm" href="index.html">Home</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors font-label-sm" href="about.html">About</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors font-label-sm" href="academics.html">Academics</a>
+<a class="text-emerald-700 dark:text-emerald-400 border-b-2 border-emerald-700 font-label-sm" href="gallery.html">Gallery</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 transition-colors font-label-sm" href="registration.html">Contact/Registration</a>
+</nav>
+<button class="md:hidden" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined text-emerald-900">menu</span>
+</button>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-black/50 z-40 hidden" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+<nav class="mobile-menu fixed top-0 left-0 w-80 max-w-full h-full bg-white z-50 p-6 flex flex-col" id="mobileMenu">
+<div class="flex justify-between items-center mb-8">
+<span class="font-bold text-emerald-900 text-lg">Menu</span>
+<button class="material-symbols-outlined text-emerald-900" onclick="toggleMobileMenu()">close</button>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-serif font-bold text-lg text-slate-600 py-2" href="index.html" onclick="toggleMobileMenu()">Home</a>
+<a class="font-serif font-bold text-lg text-slate-600 py-2" href="about.html" onclick="toggleMobileMenu()">About</a>
+<a class="font-serif font-bold text-lg text-slate-600 py-2" href="academics.html" onclick="toggleMobileMenu()">Academics</a>
+<a class="font-serif font-bold text-lg text-emerald-700 border-b-2 border-emerald-700 py-2" href="gallery.html" onclick="toggleMobileMenu()">Gallery</a>
+<a class="font-serif font-bold text-lg text-slate-600 py-2" href="registration.html" onclick="toggleMobileMenu()">Registration</a>
+</div>
+<button class="mt-auto bg-primary text-on-primary px-6 py-3 rounded-lg font-label-sm" onclick="window.location.href='registration.html'; toggleMobileMenu()">APPLY NOW</button>
+</nav>
+
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="mb-16 text-center max-w-3xl mx-auto">
+<span class="text-amber-600 font-label-sm tracking-widest uppercase mb-4 block">Campus Life</span>
+<h2 class="font-display-xl text-display-xl text-primary mb-6">Capturing the Essence of MakindyeExcellence</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">Explore our vibrant campus through our lens—from state-of-the-art laboratories to the quiet corners of our historic library.</p>
+</div>
+<!-- Bento Gallery Grid -->
+<div class="gallery-grid">
+<!-- Item 1: Large Feature -->
+<div class="bento-item-large group relative overflow-hidden rounded-xl shadow-sm bg-white border-t-4 border-emerald-800 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer" onclick="openLightbox(0)">
+<div class="aspect-video relative overflow-hidden">
+<img alt="Main Library" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A grand, historic academy library with towering dark wood bookshelves reaching towards high ceilings. Soft, warm sunlight streams through large arched windows, illuminating polished mahogany study tables and emerald-shaded lamps. The atmosphere is quiet and intellectual, reflecting a prestigious academic heritage with a warm, welcoming golden glow." src="ll.jpeg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+<div class="text-white">
+<span class="material-symbols-outlined mb-2">zoom_in</span>
+<h3 class="font-headline-md text-headline-md">The Heritage Library</h3>
+<p class="text-white/80">Our sanctuary for quiet study and historical research, containing over 50,000 volumes.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2: Tall Feature -->
+<div class="bento-item-tall group relative overflow-hidden rounded-xl shadow-sm bg-white border-t-4 border-emerald-800 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer" onclick="openLightbox(1)">
+<div class="h-full relative overflow-hidden">
+<img alt="Science Lab" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A cutting-edge modern science laboratory filled with sleek stainless steel equipment and glass beakers. Students in white coats are engaged in chemistry experiments under bright, cool-toned LED lighting that creates a professional and sterile environment. The scene is crisp and clean, emphasizing modern educational excellence and technological advancement in a vibrant school setting." src="jj.jpeg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+<div class="text-white">
+<span class="material-symbols-outlined mb-2">zoom_in</span>
+<h3 class="font-headline-md text-headline-md">Innovation Lab</h3>
+<p class="text-white/80">Fostering scientific inquiry in our advanced chemistry facility.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3: Small Card -->
+<div class="bento-item-small group relative overflow-hidden rounded-xl shadow-sm bg-white border-t-4 border-emerald-800 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer" onclick="openLightbox(2)">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Computer Center" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A modern computer technology suite featuring rows of high-end desktop computers with dual-monitor setups. The room is minimalist with a slate-gray floor and emerald green accent walls. Soft overhead lighting creates a focused, professional workspace where students can collaborate on digital design and programming projects." src="ii.jpeg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+<div class="text-white">
+<span class="material-symbols-outlined mb-2">zoom_in</span>
+<h3 class="font-headline-md text-headline-md">Digital Hub</h3>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 4: Small Card -->
+<div class="bento-item-small group relative overflow-hidden rounded-xl shadow-sm bg-white border-t-4 border-emerald-800 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer" onclick="openLightbox(3)">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Sports Complex" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="An expansive, high-ceilinged indoor sports gymnasium with polished hardwood floors reflecting the bright overhead gymnasium lights. The space is marked for basketball and volleyball with vibrant primary colors. The atmosphere is energetic and spacious, suggesting a focus on physical health and team collaboration within the academy grounds." src="kk.jpeg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+<div class="text-white">
+<span class="material-symbols-outlined mb-2">zoom_in</span>
+<h3 class="font-headline-md text-headline-md">Athletic Center</h3>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 5: Small Card -->
+<div class="bento-item-small group relative overflow-hidden rounded-xl shadow-sm bg-white border-t-4 border-emerald-800 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer" onclick="openLightbox(4)">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Classroom" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A bright and airy classroom featuring light wood desks arranged for collaborative learning. The walls are decorated with educational posters and student artwork in a curated, professional manner. Large windows let in plenty of natural daylight, creating a cheerful, productive environment that balances modern education with a warm, welcoming academic feel." src="video.mp4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+<div class="text-white">
+<span class="material-symbols-outlined mb-2">zoom_in</span>
+<h3 class="font-headline-md text-headline-md">Smart Classroom</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Call to Action -->
+<div class="mt-24 p-12 bg-white rounded-xl shadow-lg border-l-4 border-amber-500 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="max-w-xl">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-2">Ready to see it in person?</h3>
+<p class="text-body-md text-on-surface-variant">We host campus tours every Wednesday at 10:00 AM. Join us to experience the Makindye Secondary School atmosphere firsthand.</p>
+</div>
+<button class="inline-flex items-center gap-2 px-8 py-4 bg-amber-500 text-primary font-label-sm rounded-lg hover:bg-amber-600 transition-colors shadow-sm cursor-pointer" onclick="window.location.href='registration.html'">
+                Book A Campus Tour
+                <span class="material-symbols-outlined">calendar_today</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 md:px-24 grid grid-cols-1 md:grid-cols-3 gap-8 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 border-t-4 border-amber-500">
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-emerald-900" style="font-size: 24px;">school</span>
+<span class="font-bold text-emerald-900 dark:text-emerald-100 font-serif">Makindye Secondary School</span>
+</div>
+<p class="font-serif text-sm leading-relaxed text-slate-500 dark:text-slate-400">Empowering future leaders through excellence in education, character development, and academic integrity since 1924.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<ul class="space-y-2">
+<li><a class="font-serif text-sm text-slate-500 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline underline-offset-4 transition-all duration-200 cursor-pointer" href="academics.html">Academic Calendar</a></li>
+<li><a class="font-serif text-sm text-slate-500 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline underline-offset-4 transition-all duration-200 cursor-pointer" href="registration.html">Admissions</a></li>
+</ul>
+<ul class="space-y-2">
+<li><a class="font-serif text-sm text-slate-500 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline underline-offset-4 transition-all duration-200 cursor-pointer" href="#">Privacy Policy</a></li>
+<li><a class="font-serif text-sm text-slate-500 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline underline-offset-4 transition-all duration-200 cursor-pointer" href="#">Campus Map</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-sm text-emerald-900 dark:text-emerald-500 uppercase">Subscribe to News</h4>
+<div class="flex">
+<input class="flex-grow rounded-l border-slate-200 focus:border-primary focus:ring-primary/20 bg-surface-bright" placeholder="Email address" type="email" id="newsletterEmail"/>
+<button class="bg-emerald-900 text-white px-4 py-2 rounded-r hover:bg-emerald-800 transition-colors cursor-pointer" onclick="subscribeNewsletter()">Join</button>
+</div>
+<p class="text-[10px] text-slate-400">© 2026 Makindye Secondary School. All Rights Reserved.</p>
+</div>
+</footer>
+
+<!-- Lightbox Modal -->
+<div class="lightbox fixed inset-0 bg-primary/90 z-[100] flex items-center justify-center p-8 backdrop-blur-sm" id="lightbox">
+<button class="absolute top-8 right-8 text-white cursor-pointer" onclick="closeLightbox()">
+<span class="material-symbols-outlined" style="font-size: 48px;">close</span>
+</button>
+<div class="max-w-5xl w-full">
+<img alt="Enlarged View" class="w-full rounded-lg shadow-2xl border-4 border-white/10" id="lightboxImage" src=""/>
+<div class="mt-6 text-white text-center">
+<h2 class="font-headline-lg text-headline-lg" id="lightboxTitle">The Heritage Library</h2>
+<p class="text-body-lg opacity-80" id="lightboxDesc">Established 1924, renovated 2021.</p>
+</div>
+<button class="absolute left-8 top-1/2 -translate-y-1/2 text-white cursor-pointer" onclick="prevImage()">
+<span class="material-symbols-outlined" style="font-size: 48px;">chevron_left</span>
+</button>
+<button class="absolute right-8 top-1/2 -translate-y-1/2 text-white cursor-pointer" onclick="nextImage()">
+<span class="material-symbols-outlined" style="font-size: 48px;">chevron_right</span>
+</button>
+</div>
+</div>
+
+<!-- FAB for quick interaction -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-amber-500 text-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-40 group cursor-pointer" onclick="window.location.href='registration.html'" title="Apply Now">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">app_registration</span>
+<span class="absolute right-full mr-4 bg-white px-4 py-2 rounded-lg shadow-lg text-sm font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Apply Now</span>
+</button>
+
+<script>
+        // Gallery Data
+        const galleryItems = [
+            {
+                title: "The Heritage Library",
+                description: "Our sanctuary for quiet study and historical research, containing over 50,000 volumes. Established 1924, renovated 2021.",
+                image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBghNMHgfjC7eHWhVZUa9guCa-UQZtNkyKIqTkpZw7_llSu6TQuipgNmzt5ZBB_sqVTYt7TTCqSWIIT4KQXbfSCHH7tN7VKGnwUuo9GPTtJ5S60eTWxbdfyC9fTT3Uk4fzJRL8wLLhWjbkyQttxW2FaXXb12JX8AGH85UcU5-zXKW2WXHC1ZHOEX1zQSQ5xWEMI0M_s8dQKcGLRETepa6W8MfmzjbJFz_afJT_I--LXUwZiJ0ku7Av0SwtiraijAoP1T80P6O4RGM4"
+            },
+            {
+                title: "Innovation Lab",
+                description: "Fostering scientific inquiry in our advanced chemistry facility. State-of-the-art equipment for hands-on learning.",
+                image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB7OQ0cjOkSkbPrYV0ic7RM9DiBgu7PnCAyJJbGztHydpxkyppyTJKoykW2-oRRAb-S4ni-QxxQCjPXMDVml-_lUB1rK9_Q7nmbU-eCP5Ivjy8Pn-SRvFVrB3QOXQzO0ySsj6wVk2rKvpnFLHI9Th3fC5Eq3w5OdVidEW9s8SKetcfnr6tXZUM6NZEb0pYe6AIoY1VHdQ2GUWZZQi4Z3AU3GrbmBlovpmr6P2dlqJMICJlRsZX3MIO0yxU3H_-0krMG3purXSEb6Ro"
+            },
+            {
+                title: "Digital Hub",
+                description: "Modern computer technology suite with high-end desktop computers and dual-monitor setups for digital design and programming.",
+                image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDoke2mKLiCZXC2bYei273IexR5CfpvgoGQ9fqIoTSViDUtBPo44Qmsh4qXyOIw25YxGAvphzWogcBSIVxxSItxtPg2rQXyNFc9utLwoFpUH28Zrz4ovEzPwHLoaK2mMxJPwE3TEWv9hRH_ZDBUrtdbAgQv9Rv6Xpb6pMlOLx53zPc4ZztKjm3juyA81itXuIVLVyIwrrrIk0wjVVc1jj3AUpRC_FH5S_ZX1OM4zZctaoW6u-dhQUakPY5bCBxnaEwvCRJLWOR5J2s"
+            },
+            {
+                title: "Athletic Center",
+                description: "Expansive indoor sports gymnasium with polished hardwood floors for basketball and volleyball.",
+                image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC6b1PYyhh68W24b6PzIxvMVbU3hMshJARdFh8GHMHje53uRRKk1G25vi1SDo3o8I2CjaA4dld7CszszMiVxfSWEA57F-R27zgwSdo7UOagjaG1nlcASK4SxBcPkRvfEA7jpCaqX6wm0f10RdWemLVWS4nV_Xx_kgSVKFvfdFVRpPjuVTg_fRkcheMuai2zVT76szBpbSdFnazbq2GSklC5ppi_LDq9XUYKSBYoA5ogtYUTypuKCTqdiUoB1tF4vITZrYjtGr_99mg"
+            },
+            {
+                title: "Smart Classroom",
+                description: "Bright and airy classroom with collaborative learning setup and educational resources.",
+                image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAQBxr94d0_bSEKFP4rja6gBlI4tPgiEMvqL3QbRH0rBQAW-QbiRIBbmKUdFHGKx8mLiHmxNmXH1mxjp8tqVjlgL4Thfb-OP0MqFqDFXfQOXEUT2GYwLDY-2yL_nUlOri25KrxRZN-L0sLf-TPdDn04LUm7NpOFP7j64zDcclbMY_y0NTelWMGrGnevvOLw1jxh5an3Xp4Dm6UHY068j0ZxsTKlZaRPi-FIfnVvJpqrnX9b2lYi_XkUrBYuc8X44ZWhp-ztUAsQeC0"
+            }
+        ];
+
+        let currentImageIndex = 0;
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileOverlay');
+            menu.classList.toggle('active');
+            overlay.classList.toggle('hidden');
+        }
+
+        // Newsletter Subscription
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletterEmail').value;
+            if (email && email.includes('@')) {
+                alert('Thank you for subscribing! You will receive our newsletter at ' + email);
+                document.getElementById('newsletterEmail').value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+
+        // Lightbox Functions
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightbox();
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+            updateLightbox();
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            const item = galleryItems[currentImageIndex];
+            document.getElementById('lightboxImage').src = item.image;
+            document.getElementById('lightboxTitle').textContent = item.title;
+            document.getElementById('lightboxDesc').textContent = item.description;
+        }
+
+        // Keyboard navigation for lightbox
+        document.addEventListener('keydown', function(e) {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') prevImage();
+            if (e.key === 'ArrowRight') nextImage();
+        });
+    </script>
+</body></html>
